@@ -7,21 +7,33 @@ function App() {
 
   const [imageArray, setImageArray] = useState([]);
 
+  // on load
   useEffect(() => {
-    // get user names on load
-    getImageData();
+    getImages();
   }, []);
   
-  const getImageData = () => {
+  // PUT
+  const updateLikeCount = (imageId) => {
+    console.log('imageId', imageId);
+    axios.put(`/gallery/like/${imageId}`)
+      .then((response) => {
+        console.log('PUT Success', response);
+        getImages();
+      }) // end PUT
+  } // end updateLikeCount
+
+  // GET
+  const getImages = () => {
     axios.get('/gallery')
       .then((response) => {
-        console.log('response', response);
+        // console.log('response', response);
         setImageArray(response.data)
       }).catch((err) => {
         console.log('Error in GET', err);
       })
   }; // end getImageData  
   
+  // DOM
   return (
     <div className="App">
       <header className="App-header">
@@ -30,7 +42,8 @@ function App() {
       <p>Patrick's Gallery</p>
         <GalleryList 
           imageArray={imageArray}
-          getImageData={getImageData}
+          getImageData={getImages}
+          updateLikeCount={updateLikeCount}
         />
 
     </div>

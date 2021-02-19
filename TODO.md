@@ -13,8 +13,8 @@
 - [] On image click, show a description (conditional rendering)
 - [x] Number of 'likes' below the pic
 - [x] 'Like' button
-- [] Update like number on button click
-- [] Axios PUT to update the like count
+- [x] Update like number on button click
+  - [x] Axios PUT to update the like count
 
 
 
