@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: lavenderblush;
 }
 
 .App-header {
@@ -12,4 +13,13 @@
 .App-title {
   font-size: 1.5em;
 }
+
+.imageContainer {
+  margin: 20px 28vw;
+  padding: 60px;
+  width: 600px auto;
+  height: 90vh;
+  background-color: lavender;
+}
+
 

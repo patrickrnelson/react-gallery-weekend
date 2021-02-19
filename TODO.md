@@ -3,17 +3,18 @@
 ## _LFG_
 
 ### Client
-- [] Multiple components
+- [x] Multiple components
   - [x] App
   - [x] GalleryList
-  - [] GalleryItem
+  - [x] GalleryItem
 - [x] Axios
   - [x] GET /gallery
 - [x] Put gallery on DOM
 - [] On image click, show a description (conditional rendering)
-- [] Number of 'likes' below the pic
-- [] 'Like' button
-- [] Axios PUT to update the like count
+- [x] Number of 'likes' below the pic
+- [x] 'Like' button
+- [x] Update like number on button click
+  - [x] Axios PUT to update the like count
 
 
 
