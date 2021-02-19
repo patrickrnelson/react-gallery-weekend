@@ -1,4 +1,4 @@
-import GalleryItem from '../GalleryList/GalleryList'
+import GalleryItem from '../GalleryItem/GalleryItem'
 
 function GalleryList({imageArray, updateLikeCount}) {
   
