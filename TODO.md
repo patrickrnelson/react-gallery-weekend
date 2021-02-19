@@ -3,10 +3,10 @@
 ## _LFG_
 
 ### Client
-- [] Multiple components
+- [x] Multiple components
   - [x] App
   - [x] GalleryList
-  - [] GalleryItem
+  - [x] GalleryItem
 - [x] Axios
   - [x] GET /gallery
 - [x] Put gallery on DOM
