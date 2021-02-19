@@ -30,6 +30,7 @@ function App() {
       <p>Patrick's Gallery</p>
         <GalleryList 
           imageArray={imageArray}
+          getImageData={getImageData}
         />
 
     </div>
