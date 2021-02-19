@@ -4,12 +4,12 @@
 
 ### Client
 - [] Multiple components
-  - [] App
-  - [] GalleryList
+  - [x] App
+  - [x] GalleryList
   - [] GalleryItem
-- [] Axios
-  - [] GET /gallery
-- [] Put gallery on DOM
+- [x] Axios
+  - [x] GET /gallery
+- [x] Put gallery on DOM
 - [] On image click, show a description (conditional rendering)
 - [] Number of 'likes' below the pic
 - [] 'Like' button
@@ -18,5 +18,5 @@
 
 
 ### Server
-- [] Import images to the Array
+- [x] Import images to the Array
 - [] 
