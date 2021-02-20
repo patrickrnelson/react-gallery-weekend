@@ -22,8 +22,8 @@ function GalleryItem({
                 ? <div onClick={() => handleImageClick(image.description)} className="descDiv"><h5 className="imageDescription">{image.description}</h5></div> 
                 : <img onClick={() => handleImageClick(image.description)} className="image"  src={image.path} alt={image.description} />
                 : <img onClick={() => handleImageClick(image.description)} className="image"  src={image.path} alt={image.description} />}
-          <button onClick={() => updateLikeCount(image.id)}>LIKE</button>
-          <p className="likes">Likes: {image.likes}</p>
+          <button onClick={() => updateLikeCount(image.id)}>Like</button>
+          <p className="likes">{image.likes}</p>
         </div>)
         )}
     </>

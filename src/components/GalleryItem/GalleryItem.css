@@ -2,7 +2,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: 15px 15px auto 15px 15px;
-  grid-template-rows: 15px 15px auto 50px 50px;
+  grid-template-rows: 15px 15px auto 30px 30px;
   position: relative;
   margin: 20px 27vw;
   padding: 60px;
@@ -46,6 +46,7 @@ button {
   margin: 0 30%;
   border-radius: 8px;
   border: 1px solid transparent;
+  font-size: 16px;
 }
 
 button:focus { 
@@ -55,9 +56,12 @@ button:focus {
 button:hover {
   background-color: wheat;
   cursor: pointer;
+  
 }
 
 .likes {
   grid-column: 3 / 3;
   grid-row: 5 / 5;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
