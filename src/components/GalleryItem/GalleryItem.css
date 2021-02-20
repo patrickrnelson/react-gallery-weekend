@@ -45,6 +45,16 @@ button {
   width: 40%;
   margin: 0 30%;
   border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+button:focus { 
+  outline: none;
+}
+
+button:hover {
+  background-color: wheat;
+  cursor: pointer;
 }
 
 .likes {
