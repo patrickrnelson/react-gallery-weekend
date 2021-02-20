@@ -6,6 +6,9 @@ import GalleryList from '../GalleryList/GalleryList'
 function App() {
 
   const [imageArray, setImageArray] = useState([]);
+  // For the GalleryItem component for image clicks
+  const [showDescription, setShowDescription] = useState(false)
+  const [thisImageDesc, setThisImageDesc] = useState('')
 
   // on load
   useEffect(() => {
@@ -33,6 +36,17 @@ function App() {
       })
   }; // end getImageData  
   
+  
+  /* 
+  handleImageClick will.. 
+  setImageDesc to the image desc that's being clicked 
+  & setShowDescription to the opposite of what it is
+  */ // Show descriptions on image click
+  function handleImageClick(desc) {
+    setThisImageDesc(desc);
+    setShowDescription(prevCheck => !prevCheck);
+  } // end handleImageClick
+
   // DOM
   return (
     <div className="App">
@@ -44,6 +58,10 @@ function App() {
           imageArray={imageArray}
           getImageData={getImages}
           updateLikeCount={updateLikeCount}
+          handleImageClick={handleImageClick}
+          showDescription={showDescription}
+          thisImageDesc={thisImageDesc}
+          
         />
 
     </div>
