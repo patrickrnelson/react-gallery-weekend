@@ -37,7 +37,17 @@ function App() {
       })
   }; // end getImageData  
 
-  
+  // POST
+  const postImage = (imageObj) => {
+    axios.post('/gallery', imageObj)
+      .then((response) => {
+        console.log('Successful POST', response);
+        getImages();
+      })
+      .catch((error) => {
+        console.log('Error in POST', err);
+      })
+  }; // end postImage
   
   
   /* 
