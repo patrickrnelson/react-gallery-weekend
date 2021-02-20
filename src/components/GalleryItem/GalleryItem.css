@@ -1,0 +1,53 @@
+.imageContainer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 15px 15px auto 15px 15px;
+  grid-template-rows: 15px 15px auto 50px 50px;
+  position: relative;
+  margin: 20px 27vw;
+  padding: 60px;
+  width: 400px auto;
+  height: 70vh;
+  background-color: lavender;
+  align-items: center;
+  text-align: center;
+}
+
+.image {
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+  display: inline-block;
+  width: 100%;
+  max-width: 370px;
+}
+
+.descDiv {
+  height: 120px;
+  background-color: lavender;
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+}
+
+.imageDescription {
+  
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: 'Righteous', sans-serif;
+  font-size: 32px;
+  ;
+}
+
+button {
+  grid-column: 3 / 3;
+  grid-row: 4 / 4;
+  width: 40%;
+  margin: 0 30%;
+  border-radius: 8px;
+}
+
+.likes {
+  grid-column: 3 / 3;
+  grid-row: 5 / 5;
+}
