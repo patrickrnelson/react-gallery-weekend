@@ -43,10 +43,12 @@ button {
   grid-column: 3 / 3;
   grid-row: 4 / 4;
   width: 40%;
-  margin: 0 30%;
-  border-radius: 8px;
+  height: 30px;
+  margin: 15px 30% 0px 30%;
+  border-radius: 15px;
   border: 1px solid transparent;
   font-size: 16px;
+  background-color: white;
 }
 
 button:focus { 
@@ -64,4 +66,5 @@ button:hover {
   grid-row: 5 / 5;
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
+  margin-top: 15px;
 }

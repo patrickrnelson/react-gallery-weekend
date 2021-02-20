@@ -10,11 +10,26 @@ function App() {
   // For the GalleryItem component for image clicks
   const [showDescription, setShowDescription] = useState(false)
   const [thisImageDesc, setThisImageDesc] = useState('')
+  const [newImageUrl, setNewImageUrl] = useState('');
+  const [newImageDesc, setNewImageDesc] = useState('');
+
+  
 
   // on load
   useEffect(() => {
     getImages();
   }, []);
+
+  // Handle the form submit
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    //console.log('this is the image desc', newImageDesc);
+    // Clear Item Inputs
+    setNewImageDesc('');
+    setNewImageUrl('');
+    // Call the POST route to add image to server
+    postImage(newImageUrl, newImageDesc)
+  } // end handleSubmit
   
   // PUT
   const updateLikeCount = (imageId) => {
@@ -38,13 +53,13 @@ function App() {
   }; // end getImageData  
 
   // POST
-  const postImage = (imageObj) => {
-    axios.post('/gallery', imageObj)
+  const postImage = (url, description) => {
+    axios.post('/gallery', {url, description})
       .then((response) => {
         console.log('Successful POST', response);
         getImages();
       })
-      .catch((error) => {
+      .catch((err) => {
         console.log('Error in POST', err);
       })
   }; // end postImage
@@ -67,7 +82,13 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Patrick's Gallery</p>
-        <GalleryForm />
+        <GalleryForm 
+          newImageUrl={newImageUrl}
+          setNewImageUrl={setNewImageUrl}
+          newImageDesc={newImageDesc}
+          setNewImageDesc={setNewImageDesc}
+          handleSubmit={handleSubmit}
+        />
         <GalleryList 
           imageArray={imageArray}
           getImageData={getImages}
@@ -75,7 +96,6 @@ function App() {
           handleImageClick={handleImageClick}
           showDescription={showDescription}
           thisImageDesc={thisImageDesc}
-          
         />
 
     </div>
