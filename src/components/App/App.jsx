@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
+import GalleryForm from '../GalleryForm/GalleryForm'
 
 function App() {
 
@@ -35,6 +36,8 @@ function App() {
         console.log('Error in GET', err);
       })
   }; // end getImageData  
+
+  
   
   
   /* 
@@ -54,6 +57,7 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Patrick's Gallery</p>
+        <GalleryForm />
         <GalleryList 
           imageArray={imageArray}
           getImageData={getImages}
