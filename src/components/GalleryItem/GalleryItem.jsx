@@ -4,11 +4,13 @@ function GalleryItem({imageArray, updateLikeCount}) {
 
   const [descriptionBox, setDescriptionBox] = useState('')
   
-  const showDescription = (desc) => {
-    console.log('description', desc);
-    setDescriptionBox(<div className="imageOverlay" ><p>{desc}</p></div>);
+  // const showDescription = (desc) => {
+  //   console.log('description', desc);
+  //   setDescriptionBox(<div className="imageOverlay" ><p>{desc}</p></div>);
   
-  }
+  // }
+
+  const [showDescription, setShowDescription] = useState(false)
 
   return (
     <>
@@ -16,7 +18,8 @@ function GalleryItem({imageArray, updateLikeCount}) {
       {imageArray.map(image => 
         (<div className="imageContainer" key={image.id}>
           {/* {descriptionBox} */}
-          <img onClick={() => showDescription(image.description)} src={image.path} alt={image.description} width="90%"/>
+          <img onClick={() => setShowDescription(prevCheck => !prevCheck)} src={image.path} alt={image.description} width="65%"/>
+          <h4>{showDescription ? image.description : ""}</h4>
           <p>Likes: {image.likes}</p>
           <button onClick={() => updateLikeCount(image.id)}>LIKE</button>
         </div>)
