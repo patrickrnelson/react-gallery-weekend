@@ -1,6 +1,6 @@
 # Project Name
 
-Server Side Calculator
+Image Gallery - React
 
 ## Description
 
