@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
+import GalleryForm from '../GalleryForm/GalleryForm'
 
 function App() {
 
@@ -9,11 +10,26 @@ function App() {
   // For the GalleryItem component for image clicks
   const [showDescription, setShowDescription] = useState(false)
   const [thisImageDesc, setThisImageDesc] = useState('')
+  const [newImageUrl, setNewImageUrl] = useState('');
+  const [newImageDesc, setNewImageDesc] = useState('');
+
+  
 
   // on load
   useEffect(() => {
     getImages();
   }, []);
+
+  // Handle the form submit
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    //console.log('this is the image desc', newImageDesc);
+    // Clear Item Inputs
+    setNewImageDesc('');
+    setNewImageUrl('');
+    // Call the POST route to add image to server
+    postImage(newImageUrl, newImageDesc)
+  } // end handleSubmit
   
   // PUT
   const updateLikeCount = (imageId) => {
@@ -35,6 +51,18 @@ function App() {
         console.log('Error in GET', err);
       })
   }; // end getImageData  
+
+  // POST
+  const postImage = (url, description) => {
+    axios.post('/gallery', {url, description})
+      .then((response) => {
+        console.log('Successful POST', response);
+        getImages();
+      })
+      .catch((err) => {
+        console.log('Error in POST', err);
+      })
+  }; // end postImage
   
   
   /* 
@@ -54,6 +82,13 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <p>Patrick's Gallery</p>
+        <GalleryForm 
+          newImageUrl={newImageUrl}
+          setNewImageUrl={setNewImageUrl}
+          newImageDesc={newImageDesc}
+          setNewImageDesc={setNewImageDesc}
+          handleSubmit={handleSubmit}
+        />
         <GalleryList 
           imageArray={imageArray}
           getImageData={getImages}
@@ -61,7 +96,6 @@ function App() {
           handleImageClick={handleImageClick}
           showDescription={showDescription}
           thisImageDesc={thisImageDesc}
-          
         />
 
     </div>
