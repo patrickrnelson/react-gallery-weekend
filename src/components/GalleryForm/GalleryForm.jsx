@@ -1,4 +1,4 @@
-import { useState } from "react";
+import './GalleryForm.css';
 
 function GalleryForm({
   newImageUrl, 
@@ -11,7 +11,7 @@ function GalleryForm({
 
   return (
     <>
-      <h3>Add an Image</h3>
+      <h3 id="addImageTitle">Add an Image</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" value={newImageUrl} onChange={(e) => setNewImageUrl(e.target.value)} placeholder="Image URL"></input>
         <input type="text" value={newImageDesc} onChange={(e) => setNewImageDesc(e.target.value)} placeholder="Image Description"></input>
